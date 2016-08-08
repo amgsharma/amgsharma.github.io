@@ -1,0 +1,233 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+
+<head>
+<meta charset="utf-8">
+<title>Mapping US Census Data &#8211; RS2DS</title>
+<meta name="description" content="Visualizing My Twitter Archive with ggplot2">
+<meta name="keywords" content="rstats">
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="US Census Data">
+<meta property="og:description" content="Mapping Census Data with choropethr">
+<meta property="og:url" content="index.html">
+<meta property="og:site_name" content="RS2DS">
+
+
+
+
+
+<link rel="canonical" href="index.html">
+<link href="../../feed.xml" type="application/atom+xml" rel="alternate" title="RS2DS">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="../../assets/css/main.css">
+<!-- Webfonts -->
+<script src="../../../use.edgefonts.net/source-sans-pro_n2%2ci2%2cn3%2ci3%2cn4%2ci4%2cn6%2ci6%2cn7%2ci7%2cn9%2ci9%3bsource-code-pro_n4%2cn7%3bvolkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Modernizr -->
+<script src="../../assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="../../../cdn.mathjax.org/mathjax/latest/MathJaxdda6.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="../../favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="../../favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="../../images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../images/apple-touch-icon-144x144-precomposed.png">
+
+<!-- ============================================================ -->
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+  <nav role="navigation" id="site-nav" class="animated drop">
+      <ul>
+      
+        
+            
+        
+        <li><a href="../../index.html" >Projects</a></li>
+      
+        
+            
+        
+        <li><a href="../../about/index.html" >BIO</a></li>
+      
+        
+            
+        
+        <li><a href="../../resume/index.html" >Resume</a></li>
+      
+        
+            
+            
+        <li><a href="http://github.com/akiva111" target="_blank">Github</a></li>
+      
+      
+
+        
+        <li><a href="../../blogroll/index.html" >Links</a></li>
+      
+        
+            
+        
+        <li><a href="../../search/index.html" >Essays</a></li>
+      </ul>
+  </nav>
+</div>
+
+<!-- /.masthead -->
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+              
+          <h2 style="color:#bbb">Shelter Pet Outcomes: Classification in R</h2>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+        
+          <img src="../../images/P9200123.jpg" class="bio-photo" alt="Marc Sharma bio photo"></a>
+        
+        <span class="author vcard">By<span class="fn"> Marc Sharma</span></span>
+        <span class="entry-date date published"><time datetime="2015-12-08T00:00:00+00:00"><i class="fa fa-calendar-o"></i> February 7th, 2016</time></span>
+        <span class="social-share-twitter">
+  <a href="https://twitter.com/intent/tweet?hashtags=rstats&amp;text=Mapping%20Population%20Data&amp;url=http://msharma.io/blog/Mapping-Population-Data/&amp;via=msharma" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
+</span>
+<span class="social-share-facebook">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://msharma.io/blog/Mapping-Population-Data/" title="Share on Facebook" itemprop="Facebook"><i class="fa fa-facebook-square"></i> Like</a>
+</span>
+<span class="social-share-googleplus">
+  <a href="https://plus.google.com/share?url=http://msharma.io/blog/Mapping-Population-Data/" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
+</span>
+<!-- /.social-share -->
+        
+<!-- ============================================= INSERT R CODE HERE =============================================== -->  
+      </footer>
+      <div class="entry-content">
+      <p>Excerpt from the Kaggle competition: Every year, approximately 7.6 million companion animals end up in US shelters. Many animals are given up as unwanted by their owners, while others are picked up after getting lost or taken out of cruelty situations. Many of these animals find forever families to take them home, but just as many are not so lucky. 2.7 million dogs and cats are euthanized in the US every year. These insights could help shelters focus their energy on specific animals who need a little extra help finding a new home.Here, we predict the outcome of the animal as they leave the Animal Center. These outcomes include: Adoption, Died, Euthanasia, Return to Owner, and Transfer.</p>
+      <p> Prior to building the model, I'm curious to see whats going on inside the data. </p>
+      <h3> Data Visualization </h3>
+      <img src="OutcomeByAnimalType.png" alt="Outcomes By Animal Type"></a>
+      <p> From here we can see that more cats are transfered than dogs, more dogs are returned to their owners than cats and the proportions that are euthanized and adopted are close. But what about the time of year? Are there any months where a particular outcome is more likely than others?
+      <img src="OutcomeByMont.png" alt="Outcomes By Month"></a>
+      <p> Cats seem to suffer a seasonal impact with regards to being transfered or being adopted. From January (month 1) to April into May there is a steady decline in the number of adoptions, then a stead increase to July , followed by a decrease again to September, then an increase to December. The seasonal changes in the amounts per category for Dogs are more subtle. 
+      <p> Humans are partial to animals based on looks. So I'm curious to see if the color of the animal has any impact on the outcome. </p>
+      <img src="OutcomeByColor.png" alt="Outcome by Color"></a>
+      <p> Interesting trends. All tricolor and pink cats (pink cats?!?!) are transfered. All tan cats are adopted. All ruddy dogs are adopted. Finally, because the data is available, I'm curious to see if the time of day has any impact on the outcome.</p>
+      <img src="Outcome by Timeof Day.png" alt="Outcome by Time"></a>
+      <p> Seems more animals are Euthanized in the morning hours. </p>
+      <h4> Predicting the outcome: Random Forest </h4>
+      <p> A bit of munging separated the dates into days, weeks and months etc. Some other new features were added(I won't bore the reader with the details here). The first thing to do is to do a bit of parameter tuning before building the random forest. First, a tree is built using the rpart function and then plotted in order to see the optimal depth.  a random forest model was built. The errors for each of the predictors is shown below:</p>
+      <img src="predictorErrors.png" alt="Error"></a>
+      <p> Death and Euthanasia have high error rates, and I'm not sure what the possible source of errors is. I'll leave it as it is for now. Lets see what the importance of each variable is:</p>
+      <img src="Variable Importance.png" alt="PredictorImpact"></a>
+
+        
+
+
+
+
+<!--====================================================== END R CODE ========================================================= -->
+
+
+
+
+        
+    </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+    
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2016 Marc Sharma</span>
+<div class="social-icons">
+  <a href="https://twitter.com/amgsharma" title="Marc Sharma on Twitter" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+  
+  <a href="https://linkedin.com/in/msharma" title="Marc Sharma on LinkedIn" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+  
+  <a href="https://github.com/akiva111" title="Marc Sharma on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+  
+  
+  
+  <a href="http://msharma.io/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'http://msharma.io';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://juliasilge.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://juliasilge.com/assets/js/scripts.min.js"></script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68765210-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<!-- htmlwidgets dependencies --> 
+<script src="/htmlwidgets_deps/htmlwidgets-0.5/htmlwidgets.js"></script>
+<script src="/htmlwidgets_deps/d3-3.5.3/d3.min.js"></script>
+<link href="/htmlwidgets_deps/colorbrewer-1/colorbrewer.css" rel="stylesheet" />
+<script src="/htmlwidgets_deps/colorbrewer-1/colorbrewer.js"></script>
+<link href="/htmlwidgets_deps/streamgraph-1/streamgraph.css" rel="stylesheet" />
+<script src="/htmlwidgets_deps/streamgraph-binding-0.8.1/streamgraph.js"></script>
+
+
+</body>
+</html>
+
