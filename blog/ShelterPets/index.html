@@ -79,7 +79,7 @@
         
             
         
-        <li><a href="../../about/index.html" >BIO</a></li>
+        <li><a href="../../about/index.html" >About</a></li>
       
         
             
@@ -89,17 +89,18 @@
         
             
             
-        <li><a href="http://github.com/akiva111" target="_blank">Github</a></li>
+        <li><a href="http://github.com/amgsharma" target="_blank">Github</a></li>
       
-      
-
         
-        <li><a href="../../blogroll/index.html" >Links</a></li>
+                      
+        
+        <li><a href="../../blogroll/index.html" >Learn</a></li>
       
         
             
         
         <li><a href="../../search/index.html" >Essays</a></li>
+      
       </ul>
   </nav>
 </div>
@@ -153,10 +154,12 @@
       <img src="Outcome by Timeof Day.png" alt="Outcome by Time"></a>
       <p> Seems more animals are Euthanized in the morning hours. </p>
       <h4> Predicting the outcome: Random Forest </h4>
-      <p> A bit of munging separated the dates into days, weeks and months etc. Some other new features were added(I won't bore the reader with the details here). The first thing to do is to do a bit of parameter tuning before building the random forest. First, a tree is built using the rpart function and then plotted in order to see the optimal depth.  a random forest model was built. The errors for each of the predictors is shown below:</p>
+      <p> A bit of munging separated the dates into days, weeks and months etc. Some other new features were added(I won't bore the reader with the details here). The first thing to do is to do a bit of parameter tuning before building the random forest. The errors for each of the predictors is shown below:</p>
       <img src="predictorErrors.png" alt="Error"></a>
-      <p> Death and Euthanasia have high error rates, and I'm not sure what the possible source of errors is. I'll leave it as it is for now. Lets see what the importance of each variable is:</p>
+      <p> Death and Euthanasia have unusally high error rates, and I'm not sure what the possible source of errors is. I'll leave it as it is for now. Lets see what the importance of each variable is:</p>
       <img src="Variable Importance.png" alt="PredictorImpact"></a>
+      <p> The randomForest yeilded a score of 0.856 on Kaggle. Ok, lets apply a gbm model and see what the difference in outcome is.  
+
 
         
 
