@@ -1,0 +1,218 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+
+<head>
+<meta charset="utf-8">
+<title>Mapping US Census Data &#8211; RS2DS</title>
+<meta name="description" content="Visualizing My Twitter Archive with ggplot2">
+<meta name="keywords" content="rstats">
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="US Census Data">
+<meta property="og:description" content="Mapping Census Data with choropethr">
+<meta property="og:url" content="index.html">
+<meta property="og:site_name" content="RS2DS">
+
+
+
+
+
+<link rel="canonical" href="index.html">
+<link href="../../feed.xml" type="application/atom+xml" rel="alternate" title="RS2DS">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="../../assets/css/main.css">
+<!-- Webfonts -->
+<script src="../../../use.edgefonts.net/source-sans-pro_n2%2ci2%2cn3%2ci3%2cn4%2ci4%2cn6%2ci6%2cn7%2ci7%2cn9%2ci9%3bsource-code-pro_n4%2cn7%3bvolkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Modernizr -->
+<script src="../../assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="../../../cdn.mathjax.org/mathjax/latest/MathJaxdda6.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="../../favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="../../favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="../../images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../images/apple-touch-icon-144x144-precomposed.png">
+
+<!-- ============================================================ -->
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+  <nav role="navigation" id="site-nav" class="animated drop">
+      <ul>
+      
+        
+            
+        
+        <li><a href="../../index.html" >Projects</a></li>
+      
+        
+            
+        
+        <li><a href="../../about/index.html" >About</a></li>
+      
+        
+            
+        
+        <li><a href="../../resume/index.html" >Resume</a></li>
+      
+        
+            
+            
+        <li><a href="http://github.com/amgsharma" target="_blank">Github</a></li>
+      
+        
+                      
+        
+        <li><a href="../../blogroll/index.html" >Learn</a></li>
+      
+        
+            
+        
+        <li><a href="../../search/index.html" >Essays</a></li>
+      
+      </ul>
+  </nav>
+</div>
+
+<!-- /.masthead -->
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+              
+          <h2 style="color:#bbb">Essay 1</h2>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+        
+          <img src="../../images/test.png" class="bio-photo" alt="Marc Sharma bio photo"></a>
+        
+        <span class="author vcard">By<span class="fn"> Marc Sharma</span></span>
+        <span class="entry-date date published"><time datetime="2008-09-08T00:00:00+00:00"><i class="fa fa-calendar-o"></i> September 1st 2008</time></span>
+        <span class="social-share-twitter">
+  <a href="https://twitter.com/intent/tweet?hashtags=rstats&amp;text=Mapping%20Population%20Data&amp;url=http://msharma.io/blog/Mapping-Population-Data/&amp;via=msharma" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
+</span>
+<span class="social-share-facebook">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://msharma.io/blog/Mapping-Population-Data/" title="Share on Facebook" itemprop="Facebook"><i class="fa fa-facebook-square"></i> Like</a>
+</span>
+<span class="social-share-googleplus">
+  <a href="https://plus.google.com/share?url=http://msharma.io/blog/Mapping-Population-Data/" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
+</span>
+<!-- /.social-share -->
+        
+<!-- ============================================= INSERT R CODE HERE =============================================== -->  
+      </footer>
+      <div class="entry-content">
+      <p>I remember, at around the age of 10 or 11. I was fearless, invincible and had the world at my fingertips – as we all did at that age.  At that time, I faced before me a seemingly insurmountable foe: the Common Entrance Exam. Every child’s worst nightmare. I had witnessed the trepidation that befell those who endured the ordeal before me. I observed closely the relief of those who managed to get into the schools they sought after. My parents, (may they always receive merit for the work they’ve put in for their children) always maintained a strict standard when it came to academics. Outside of the mundane homework assignments that were dished out, we (My sister and I) were expected to engage in readings of the classics and (more annoyingly) to stimulate our imaginations with English composition. Well, it paid off. When my turn arrived, my teachers were confident, my parents were confident...even I was (admittedly comparatively) a little bit unconcerned.  On that sacred eve of the dreaded examination, when all fell silent, there was no scribbling of soft graphite ‘pon paper, there were no calculations to be checked, there was no erasing of answers that arose from ambiguity springing from adrenaline. No. There was simply the maternal command to “Rest”.  Rest? What’s rest? I had no idea what to do with myself. This ‘rest’ thing was making me nervous. Suddenly an evening came upon me where I had nothing to do. So, I went downstairs to Mama.</p>
+      <p>I have re-lived the following account so often in my darkest hours that I remember it as though it were yesterday. Mama sat in her hammock gently swaying to and fro, carrying the weight of the world upon her shoulders (as was usual with her – habit or hobby is up for your conjecture).  As I descended the stairs, she lifted her eyes and that oh so loving smile flashed across her face. You know the smile I’m talking about? The one that said that everything was alright with the world? The one that made you believe that the cold winds would never reach you... The one that made you smile, even if didn’t want to. I approached her and sat beside her in silence. She let me be for a few minutes then she asked “Yuh fraid?”  I looked up and wondered in a fleeting second if what I really felt was indeed fear, or was it just nervousness, if I said I was not, would I be lying? And rather than risk a lie, I said “yeah”. Then she chuckled. Do you remember Mama’s laugh? I do… Then she said to me “Doh fraid. When yuh sit down, before yuh start just say “Lord, I write this exam in your name” and yuh go do good.” I nodded in response and she hugged me close to her until I was called for supper. There’s probably nothing in this world as wholesome and complete as being held in one of Mama’s strong embraces.</p>
+      <p>Here was a woman who worried endlessly about her children, grandchildren and the war in Iraq. Here was my illiterate, beloved-by-all grandmother who single-handedly raised my uncles and aunts to be upstanding men and women against all odds. And on what foundation?  On the simple belief that a greater good was on her side. Here was the woman from whom I sought inspiration and strength throughout my life.</p>
+      <p>I was unable to attend her funeral. It ripped me apart each day that I was could not comfort her on her deathbed. I am happy and proud that my sister never left her side. And, I’ll tell you this much: There has yet to be a single person who I’ve let into my private life, who has not heard me talk, yea BOAST about Dolly Sharma. I carry her life and achievements upon my sleeve. And for the rest of my life, with each goal, each success, her memory will be there with me and my gratitude will endure.</p>
+      
+
+
+        
+
+
+
+
+<!--====================================================== END R CODE ========================================================= -->
+
+
+
+
+        
+    </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+    
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2016 Marc Sharma</span>
+<div class="social-icons">
+  <a href="https://twitter.com/amgsharma" title="Marc Sharma on Twitter" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+  
+  <a href="https://linkedin.com/in/amgsharma" title="Marc Sharma on LinkedIn" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+  
+  <a href="https://github.com/amgsharma" title="Marc Sharma on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+  
+  
+  
+  <a href="http://msharma.io/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'http://msharma.io';
+</script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68765210-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<!-- htmlwidgets dependencies --> 
+<script src="/htmlwidgets_deps/htmlwidgets-0.5/htmlwidgets.js"></script>
+<script src="/htmlwidgets_deps/d3-3.5.3/d3.min.js"></script>
+<link href="/htmlwidgets_deps/colorbrewer-1/colorbrewer.css" rel="stylesheet" />
+<script src="/htmlwidgets_deps/colorbrewer-1/colorbrewer.js"></script>
+<link href="/htmlwidgets_deps/streamgraph-1/streamgraph.css" rel="stylesheet" />
+<script src="/htmlwidgets_deps/streamgraph-binding-0.8.1/streamgraph.js"></script>
+
+
+</body>
+</html>
+
