@@ -6,7 +6,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>Mapping US Census Data &#8211; RS2DS</title>
+<title>Flight Crash History &#8211; RS2DS</title>
 <meta name="description" content="Visualizing My Twitter Archive with ggplot2">
 <meta name="keywords" content="rstats">
 
@@ -68,40 +68,41 @@
 <body id="post">
 
 <div class="navigation-wrapper">
-	<nav role="navigation" id="site-nav" class="animated drop">
-	    <ul>
+  <nav role="navigation" id="site-nav" class="animated drop">
+      <ul>
       
-		    
-		        
-		    
-		    <li><a href="../../index.html" >Projects</a></li>
-		  
-		    
-		        
-		    
-		    <li><a href="../../about/index.html" >BIO</a></li>
-		  
-		    
-		        
-		    
-		    <li><a href="../../resume/index.html" >Resume</a></li>
-		  
-		    
-		        
-		        
-		    <li><a href="http://github.com/akiva111" target="_blank">Github</a></li>
-		  
-		  
-
-		    
-		    <li><a href="../../blogroll/index.html" >Links</a></li>
-		  
-		    
-		        
-		    
-		    <li><a href="../../search/index.html" >Essays</a></li>
-		  </ul>
-	</nav>
+        
+            
+        
+        <li><a href="../../index.html" >Projects</a></li>
+      
+        
+            
+        
+        <li><a href="../../about/index.html" >About</a></li>
+      
+        
+            
+        
+        <li><a href="../../resume/index.html" >Resume</a></li>
+      
+        
+            
+            
+        <li><a href="http://github.com/amgsharma" target="_blank">Github</a></li>
+      
+        
+                      
+        
+        <li><a href="../../blogroll/index.html" >Learn</a></li>
+      
+        
+            
+        
+        <li><a href="../../search/index.html" >Essays</a></li>
+      
+      </ul>
+  </nav>
 </div>
 
 <!-- /.masthead -->
@@ -115,17 +116,17 @@
     <div class="entry-wrapper">
       <header class="entry-header">
               
-          <h2 style="color:#bbb">Disease Correlations</h2>
+          <h2 style="color:#bbb">Airplane Crashes and Fatalities since 1908</h2>
         
       </header>
       <footer class="entry-meta">
         
         
         
-          <img src="../../images/P9200123.jpg" class="bio-photo" alt="Marc Sharma bio photo"></a>
+          <img src="../../images/test.png" class="bio-photo" alt="Marc Sharma bio photo"></a>
         
         <span class="author vcard">By<span class="fn"> Marc Sharma</span></span>
-        <span class="entry-date date published"><time datetime="2015-12-08T00:00:00+00:00"><i class="fa fa-calendar-o"></i> February 7th, 2016</time></span>
+        <span class="entry-date date published"><time datetime="2015-12-08T00:00:00+00:00"><i class="fa fa-calendar-o"></i> August 20th, 2016</time></span>
         <span class="social-share-twitter">
   <a href="https://twitter.com/intent/tweet?hashtags=rstats&amp;text=Mapping%20Population%20Data&amp;url=http://msharma.io/blog/Mapping-Population-Data/&amp;via=msharma" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
 </span>
@@ -140,7 +141,23 @@
 <!-- ============================================= INSERT R CODE HERE =============================================== -->  
       </footer>
       <div class="entry-content">
-      <p>Insert content here</p>
+      <p>Wouldn't it be something if data could reveal an underlying pattern to all flights that end in fatalities? The following data set provide by <a href="https://opendata.socrata.com/"> OpenData </a> allows for an examination of plane crashes by location, type of aircraft, time, and a summary on the events that transpired. In the first part of explaratory analysis I plotted the times per crash (maybe there's some dark hour that pilots should start avoiding!). But as the plot below shows, there are no hidden messages from that angle.</p>
+      <img src="CrashPerHour.png" alt="1896 Olympic Games"></a>
+
+      <p> Next I wanted to answer some basic questions such as: What does the annual trend in plane crashes look like? What about fatalities per year, I would expect a decrease in fatalities, at least for civilian aircraft as technology for predicting engine failure and avoiding turbulent weather zones have improved over the years. What about the airlines themselves? Is there a particlar airline to avoid? </p>
+      <h3> Annual Trends </h3>
+      <p> The plot below depicts the total number of crashes per year. Its interesting that 1972 was the deadliest year, even more so than throughout WWI and WW II . Then again, the number of commercial aircraft taking flight should be taken into consideration as well, and that number would be monotonically increasing. After 1972, despite the increasing number of flights the number of crashes seem to follow a generally decreasing trend, with a sharp drop in the final year for which data is given. The last time there were so few flight crashes per year since 2009 was 1941. </p>
+      <img src="CrashPerYear.png" alt="Crashes Per Year"></a>
+      <p>The plot above combines incidents for both Military and Civil aircraft. I'd like to see what the trends would look like if I were to separate them. The plot below shows the annual trends in flight crashes from 1908 to 2009 for both military and civilian (commercial and private) aircraft. The spike in the Military incidents coincides with wars; the first being between 1914 to 1918 then 1939 to 1945. Each subsequent peak and trough could probably be likewise mapped to some political upheaval. Both Military and civilian incidents have subsided significantly in recent decades as compared to the entire period, and nonmilitary aircraft account for more crashes than military. </p>
+      <img src="MilitaryVsCivilCrash.png" alt="NilitaryVsCivil"></a> 
+      Each year the number of passengers surpass the number of fatalities, but does this difference have a trend? The plot below compares the two values, but no dramatic trend emerges. 
+      <img src="FatalitiesVsPassengers.png" alt="CrashVPass"></a>
+      <p> But the interested reader would really want to know: Which airline do I avoid?? Examining a frequency table of the last decade yeilds the following information: The number of different operators involved in fatal crashes has decresed from 70 in 1999 to just 20 in 2009. But that does not give an indication of the number of deaths per operator. The following graph zooms in on the last decade, from 1999 to 2009 and then further truncates the data to include only the operators that are responsible for the top 10 (rated by fatality number, morbid lingo here I admit) crashes in that year. The following plot shows the deadliest airlines. Leading the pack is Aeroflot with 179 incidents, followed by Air France with 70 then Luftansa with 65. </p>
+      <img src="WhoNotToFlyWith.png" alt="NotToFly"></a>
+      </p> Finally I thought I would use some clustering to see if I could ascertain whether the reasons for the crash could be segmented. I started off by creating a corpus of words from the summary of each flight crash report. Then, from the corpus, a word cloud was created, just to see which words were dominant and whether a technique like k-means clustering would actually work. The word cloud that resulted is depited below: 
+      <img src="wordCloud_Summary.png" alt="WordCloud"></a>
+      At this point, I think I would need to clean up the corpus a bit more before proceeding. Words like 'short' shouldn't be in there. Stay tuned. To be continued...       
+
 
 
 
@@ -164,17 +181,14 @@
 
 <span>&copy; 2016 Marc Sharma</span>
 <div class="social-icons">
-	<a href="https://twitter.com/amgsharma" title="Marc Sharma on Twitter" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
-	
-	
-	<a href="https://linkedin.com/in/msharma" title="Marc Sharma on LinkedIn" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
-	
-	<!-- <a href="https://instagram.com/juliasilge" title="Julia Silge on Instagram" target="_blank"><i class="fa fa-instagram fa-2x"></i></a> -->
-	
-	<a href="https://github.com/akiva111" title="Marc Sharma on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
-	
+  <a href="https://twitter.com/amgsharma" title="Marc Sharma on Twitter" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
   
-	
+  <a href="https://linkedin.com/in/amgsharma" title="Marc Sharma on LinkedIn" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+  
+  <a href="https://github.com/amgsharma" title="Marc Sharma on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+  
+  
+  
   <a href="http://msharma.io/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
 </div><!-- /.social-icons -->
 
@@ -184,11 +198,6 @@
 <script type="text/javascript">
   var BASE_URL = 'http://msharma.io';
 </script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="http://juliasilge.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-<script src="http://juliasilge.com/assets/js/scripts.min.js"></script>
-
 
 
 <script>
