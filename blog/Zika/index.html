@@ -116,7 +116,7 @@
     <div class="entry-wrapper">
       <header class="entry-header">
               
-          <h2 style="color:#bbb">Airplane Crashes and Fatalities since 1908</h2>
+          <h2 style="color:#bbb">Tracking the Spread of Zika</h2>
         
       </header>
       <footer class="entry-meta">
@@ -141,25 +141,25 @@
 <!-- ============================================= INSERT R CODE HERE =============================================== -->  
       </footer>
       <div class="entry-content">
-      <p>Wouldn't it be something if data could reveal an underlying pattern to all flights that end in fatalities? The following data set provide by <a href="https://opendata.socrata.com/"> OpenData </a> allows for an examination of plane crashes by location, type of aircraft, time, and a summary on the events that transpired. In the first part of explaratory analysis I plotted the times per crash (maybe there's some dark hour that pilots should start avoiding!). But as the plot below shows, there are no hidden messages from that angle.</p>
-      <img src="CrashPerHour.png" alt="1896 Olympic Games">
+      <p>The Zika virus inherits its name from a forest in Uganda where the virus was first isolated in 1947. The virus is spread mainly by the Aedes aegypti mosquito. Men infected with Zika can transmit the virus to their sexual partners. In February of 2016 the World Health Organisation declared the outbreak a Public Health Emergency of International Concern, even though the outbreak began early in 2015 and since then has been sweeping through South America. Yay! A declaration! </p>
+      
+      <p> A combined effort from the internet hivemind on github has seen a unified effort to collect formatted data that is made publicaly available. The data can be accessed <a href="https://github.com/cdcepi/zika"> HERE</a>. I've taken the currently available data and did a few simple plots, just to see whats where.</p>
+      <h3> Trends by Country</h3>
+      <p> The plot below shows the number of cases per month by country. Due to the disproportionate number of cases witnessed in Columbia as compared to the other countries the resolution of the chart renders it a bit difficult to discern anthing outside of Columbia's plight. </p>
+      <img src="CasesPerMonthPerCountryLinePlot.png" alt="ZikaCaseByCountry">
+      <p>So then Columbia is removed to take a closer look at the other country trends. The plot below shows the other countries, excluding Columbia. Topping the chart is Brazil and the Dominican Republic. Interesting to note is that for the three countries experiencing the most number of Zika cases, all three of them saw a sharp increase in the number of cases between months 2 to 3 in the cycle, then a sharp decline, Can these correspond to mosquito mating season then treatments? Also, the immedate lack of cases after June is suspect. I'll have to figure out if thats a data collection problem or data representation.. El Salvador seems to be the only country where the number of cases are once again rising at the end of the cycle. </p>
+      <img src="CasesPerCountryPerMonth_noColombia.png" alt="MilitaryVsCivil">
+      <p>The CDC issued warnings in south Florida, specifically Wynwood (The haven of hipsters), and the internet does what it does best by making light of a potentially terrible situation: </p>
+      <img src="hipster.png" alt="Hipster"></a>
+      <p>Lets take a closer look at whats happening in the US. The barchart below shows the total number of cases per state and separates them by category. An infection of the virus as mentioned above can be via sexual transmission or a mosquito. Cases are categorized as either 'Local' or 'Travel' depending on whether the patient caught the virus at home or abroad. If the virus was contracted locally there is more cause for concern since then there is a risk of infection by mosquito, in which case the number of cases can increase rapidly.</p>
+      <img src="TotalCasesPerUSState.png" alt="CasesbyState">
+      <p> The plot shows that Puerto Rico, The US Virgin Islands and American Samoa account for all the cases of local contraction - which makes sense given their geographical tropical locations. Florida accounts for the most cases of all states, and from the time of data collection, all of them were from travel. This too makes sense given the diverse demographic of Florida. Montana has no cases. People there don't ever leave and mosquitoes don't stand a chance of survival (a terrible joke attempting to highlight poor interpretation.) But what about the trends?</p>
+      <img src="trendsByState.png" alt="trendsbyState">
+      <p>The plot above shows the trends by state. With florida in the picture, not much can be discerned about the other states. SO we know that florida peaked in about month 4 of the cycle and then decreased dramatically. Lets remove Florida from the plot and look at the others.</p>
+      <img src="CasesByState_withoutFlorida.png" alt="trendsbyStateWithoutFlorida">
+      <p> Not having Florida in the dataset certainly improved the resolution, but my legend has been truncated! I'll have to fix that.. Meanwhile, the trends seem to show an overall increase from months 2 to 3 , followed by a decrease, then a spike again from months 5 to 6. No epidemic has been announced just yet, but given the impact on fetal development, one can understand why over 5000 cases of Zika in a state would be cause for concern. As the dataset grows, I will continue my analysis, perhaps even integrate some prediction if possible. Watch this space. </p>
 
-      <p> Next I wanted to answer some basic questions such as: What does the annual trend in plane crashes look like? What about fatalities per year, I would expect a decrease in fatalities, at least for civilian aircraft as technology for predicting engine failure and avoiding turbulent weather zones have improved over the years. What about the airlines themselves? Is there a particlar airline to avoid? </p>
-      <h3> Annual Trends </h3>
-      <p> The plot below depicts the total number of crashes per year. Its interesting that 1972 was the deadliest year, even more so than throughout WWI and WW II . Then again, the number of commercial aircraft taking flight should be taken into consideration as well, and that number would be monotonically increasing. After 1972, despite the increasing number of flights the number of crashes seem to follow a generally decreasing trend, with a sharp drop in the final year for which data is given. The last time there were so few flight crashes per year since 2009 was 1941. </p>
-      <img src="CrashPerYear.png" alt="Crashes Per Year">
-      <p>The plot above combines incidents for both Military and Civil aircraft. I'd like to see what the trends would look like if I were to separate them. The plot below shows the annual trends in flight crashes from 1908 to 2009 for both military and civilian (commercial and private) aircraft. The spike in the Military incidents coincides with wars; the first being between 1914 to 1918 then 1939 to 1945. Each subsequent peak and trough could probably be likewise mapped to some political upheaval. Both Military and civilian incidents have subsided significantly in recent decades as compared to the entire period, and nonmilitary aircraft account for more crashes than military. </p>
-      <img src="MVC.png" alt="MilitaryVsCivil">
-      <p>
-      Each year the number of passengers surpass the number of fatalities, but does this difference have a trend? The plot below compares the two values, but no dramatic trend emerges.
-      </p> 
-      <img src="FatalitiesVsPassengers.png" alt="CrashVPass">
-      <p> But the interested reader would really want to know: Which airline do I avoid?? Examining a frequency table of the last decade yeilds the following information: The number of different operators involved in fatal crashes has decresed from 70 in 1999 to just 20 in 2009. But that does not give an indication of the number of deaths per operator. The following graph zooms in on the last decade, from 1999 to 2009 and then further truncates the data to include only the operators that are responsible for the top 10 (rated by fatality number, morbid lingo here I admit) crashes in that year. The following plot shows the deadliest airlines. Leading the pack is Aeroflot with 179 incidents, followed by Air France with 70 then Luftansa with 65. </p>
-      <img src="WhoNotToFlyWith.png" alt="NotToFly">
-      </p> Finally I thought I would use some clustering to see if I could ascertain whether the reasons for the crash could be segmented. I started off by creating a corpus of words from the summary of each flight crash report. Then, from the corpus, a word cloud was created, just to see which words were dominant and whether a technique like k-means clustering would actually work. The word cloud that resulted is depited below: </p>
-      <img src="wordCloud_Summary.png" alt="WordCloud">
-      <p>At this point, I think I would need to clean up the corpus a bit more before proceeding. Words like 'short' shouldn't be in there. Stay tuned. To be continued...</p>
-      </div>       
+      </div>
 
 
 
