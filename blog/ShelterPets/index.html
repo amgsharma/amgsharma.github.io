@@ -25,6 +25,15 @@
 
 
 <link rel="canonical" href="index.html">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164490628-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-164490628-1');
+</script>
 <link href="../../feed.xml" type="application/atom+xml" rel="alternate" title="RS2DS">
 
 <!-- https://t.co/dKP3o1e -->
@@ -70,37 +79,37 @@
 <div class="navigation-wrapper">
   <nav role="navigation" id="site-nav" class="animated drop">
       <ul>
-      
-        
-            
-        
+
+
+
+
         <li><a href="../../index.html" >Projects</a></li>
-      
-        
-            
-        
+
+
+
+
         <li><a href="../../about/index.html" >About</a></li>
-      
-        
-            
-        
+
+
+
+
         <li><a href="../../resume/index.html" >Resume</a></li>
-      
-        
-            
-            
+
+
+
+
         <li><a href="http://github.com/amgsharma" target="_blank">Github</a></li>
-      
-        
-                      
-        
+
+
+
+
         <li><a href="../../blogroll/index.html" >Learn</a></li>
-      
-        
-            
-        
+
+
+
+
         <li><a href="../../search/index.html" >Essays</a></li>
-      
+
       </ul>
   </nav>
 </div>
@@ -112,19 +121,19 @@
 
 <div id="main" role="main">
   <article class="hentry">
-    
+
     <div class="entry-wrapper">
       <header class="entry-header">
-              
+
           <h2 style="color:#bbb">Shelter Pet Outcomes: Classification in R</h2>
-        
+
       </header>
       <footer class="entry-meta">
-        
-        
-        
+
+
+
           <img src="../../images/test.png" class="bio-photo" alt="Marc Sharma bio photo"></a>
-        
+
         <span class="author vcard">By<span class="fn"> Marc Sharma</span></span>
         <span class="entry-date date published"><time datetime="2015-12-08T00:00:00+00:00"><i class="fa fa-calendar-o"></i> February 7th, 2016</time></span>
         <span class="social-share-twitter">
@@ -137,8 +146,8 @@
   <a href="https://plus.google.com/share?url=http://msharma.io/blog/Mapping-Population-Data/" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
 </span>
 <!-- /.social-share -->
-        
-<!-- ============================================= INSERT R CODE HERE =============================================== -->  
+
+<!-- ============================================= INSERT R CODE HERE =============================================== -->
       </footer>
       <div class="entry-content">
       <p>Excerpt from the Kaggle competition: Every year, approximately 7.6 million companion animals end up in US shelters. Many animals are given up as unwanted by their owners, while others are picked up after getting lost or taken out of cruelty situations. Many of these animals find forever families to take them home, but just as many are not so lucky. 2.7 million dogs and cats are euthanized in the US every year. These insights could help shelters focus their energy on specific animals who need a little extra help finding a new home.Here, we predict the outcome of the animal as they leave the Animal Center. These outcomes include: Adoption, Died, Euthanasia, Return to Owner, and Transfer.</p>
@@ -147,7 +156,7 @@
       <img src="OutcomeByAnimalType.png" alt="Outcomes By Animal Type"></a>
       <p> From here we can see that more cats are transfered than dogs, more dogs are returned to their owners than cats and the proportions that are euthanized and adopted are close. But what about the time of year? Are there any months where a particular outcome is more likely than others?
       <img src="OutcomebyMonth.png" alt="Outcomes By Month"></a>
-      <p> Cats seem to suffer a seasonal impact with regards to being transfered or being adopted. From January (month 1) to April into May there is a steady decline in the number of adoptions, then a stead increase to July , followed by a decrease again to September, then an increase to December. The seasonal changes in the amounts per category for Dogs are more subtle. 
+      <p> Cats seem to suffer a seasonal impact with regards to being transfered or being adopted. From January (month 1) to April into May there is a steady decline in the number of adoptions, then a stead increase to July , followed by a decrease again to September, then an increase to December. The seasonal changes in the amounts per category for Dogs are more subtle.
       <p> Humans are partial to animals based on looks. So I'm curious to see if the color of the animal has any impact on the outcome. </p>
       <img src="OutcomeByColor.png" alt="Outcome by Color"></a>
       <p> Interesting trends. All tricolor and pink cats (pink cats?!?!) are transfered. All tan cats are adopted. All ruddy dogs are adopted. Finally, because the data is available, I'm curious to see if the time of day has any impact on the outcome.</p>
@@ -158,10 +167,10 @@
       <img src="predictorErrors.png" alt="Error"></a>
       <p> Death and Euthanasia have unusally high error rates, and I'm not sure what the possible source of errors is. I'll leave it as it is for now. Lets see what the importance of each variable is:</p>
       <img src="Variable Importance.png" alt="PredictorImpact"></a>
-      <p> The randomForest yeilded a score of 0.856 on Kaggle. Ok, lets apply a gbm model and see what the difference in outcome is.  
+      <p> The randomForest yeilded a score of 0.856 on Kaggle. Ok, lets apply a gbm model and see what the difference in outcome is.
 
 
-        
+
 
 
 
@@ -171,29 +180,29 @@
 
 
 
-        
+
     </div><!-- /.entry-content -->
     </div><!-- /.entry-wrapper -->
     <nav class="pagination" role="navigation">
-    
+
     </nav><!-- /.pagination -->
   </article>
 </div><!-- /#main -->
 
 <div class="footer-wrapper">
   <footer role="contentinfo" class="entry-wrapper">
-    
+
 
 <span>&copy; 2016 Marc Sharma</span>
 <div class="social-icons">
   <a href="https://twitter.com/amgsharma" title="Marc Sharma on Twitter" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
-  
+
   <a href="https://linkedin.com/in/amgsharma" title="Marc Sharma on LinkedIn" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
-  
+
   <a href="https://github.com/amgsharma" title="Marc Sharma on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
-  
-  
-  
+
+
+
   <a href="http://msharma.io/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
 </div><!-- /.social-icons -->
 
@@ -217,7 +226,7 @@
 </script>
 
 
-<!-- htmlwidgets dependencies --> 
+<!-- htmlwidgets dependencies -->
 <script src="/htmlwidgets_deps/htmlwidgets-0.5/htmlwidgets.js"></script>
 <script src="/htmlwidgets_deps/d3-3.5.3/d3.min.js"></script>
 <link href="/htmlwidgets_deps/colorbrewer-1/colorbrewer.css" rel="stylesheet" />

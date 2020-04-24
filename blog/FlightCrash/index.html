@@ -25,6 +25,15 @@
 
 
 <link rel="canonical" href="index.html">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164490628-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-164490628-1');
+</script>
 <link href="../../feed.xml" type="application/atom+xml" rel="alternate" title="RS2DS">
 
 <!-- https://t.co/dKP3o1e -->
@@ -70,37 +79,37 @@
 <div class="navigation-wrapper">
   <nav role="navigation" id="site-nav" class="animated drop">
       <ul>
-      
-        
-            
-        
+
+
+
+
         <li><a href="../../index.html" >Projects</a></li>
-      
-        
-            
-        
+
+
+
+
         <li><a href="../../about/index.html" >About</a></li>
-      
-        
-            
-        
+
+
+
+
         <li><a href="../../resume/index.html" >Resume</a></li>
-      
-        
-            
-            
+
+
+
+
         <li><a href="http://github.com/amgsharma" target="_blank">Github</a></li>
-      
-        
-                      
-        
+
+
+
+
         <li><a href="../../blogroll/index.html" >Learn</a></li>
-      
-        
-            
-        
+
+
+
+
         <li><a href="../../search/index.html" >Essays</a></li>
-      
+
       </ul>
   </nav>
 </div>
@@ -112,19 +121,19 @@
 
 <div id="main" role="main">
   <article class="hentry">
-    
+
     <div class="entry-wrapper">
       <header class="entry-header">
-              
+
           <h2 style="color:#bbb">Airplane Crashes and Fatalities since 1908</h2>
-        
+
       </header>
       <footer class="entry-meta">
-        
-        
-        
+
+
+
           <img src="../../images/test.png" class="bio-photo" alt="Marc Sharma bio photo"></a>
-        
+
         <span class="author vcard">By<span class="fn"> Marc Sharma</span></span>
         <span class="entry-date date published"><time datetime="2015-12-08T00:00:00+00:00"><i class="fa fa-calendar-o"></i> August 20th, 2016</time></span>
         <span class="social-share-twitter">
@@ -137,8 +146,8 @@
   <a href="https://plus.google.com/share?url=http://msharma.io/blog/Mapping-Population-Data/" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
 </span>
 <!-- /.social-share -->
-        
-<!-- ============================================= INSERT R CODE HERE =============================================== -->  
+
+<!-- ============================================= INSERT R CODE HERE =============================================== -->
       </footer>
       <div class="entry-content">
       <p>Wouldn't it be something if data could reveal an underlying pattern to all flights that end in fatalities? The following data set provide by <a href="https://opendata.socrata.com/"> OpenData </a> allows for an examination of plane crashes by location, type of aircraft, time, and a summary on the events that transpired. In the first part of explaratory analysis I plotted the times per crash (maybe there's some dark hour that pilots should start avoiding!). But as the plot below shows, there are no hidden messages from that angle.</p>
@@ -152,14 +161,14 @@
       <img src="mvc2.png" alt="MilitaryVsCivil">
       <p>
       Each year the number of passengers surpass the number of fatalities, but does this difference have a trend? The plot below compares the two values, but no dramatic trend emerges.
-      </p> 
+      </p>
       <img src="FatalitiesVsPassengers.png" alt="CrashVPass">
       <p> But the interested reader would really want to know: Which airline do I avoid?? Examining a frequency table of the last decade yeilds the following information: The number of different operators involved in fatal crashes has decresed from 70 in 1999 to just 20 in 2009. But that does not give an indication of the number of deaths per operator. The following graph zooms in on the last decade, from 1999 to 2009 and then further truncates the data to include only the operators that are responsible for the top 10 (rated by fatality number, morbid lingo here I admit) crashes in that year. The following plot shows the deadliest airlines. Leading the pack is Aeroflot with 179 incidents, followed by Air France with 70 then Luftansa with 65. </p>
       <img src="WhoNotToFlyWith.png" alt="NotToFly">
       </p> Finally I thought I would use some clustering to see if I could ascertain whether the reasons for the crash could be segmented. I started off by creating a corpus of words from the summary of each flight crash report. Then, from the corpus, a word cloud was created, just to see which words were dominant and whether a technique like k-means clustering would actually work. The word cloud that resulted is depited below: </p>
       <img src="wordCloud_Summary.png" alt="WordCloud">
       <p>At this point, I think I would need to clean up the corpus a bit more before proceeding. Words like 'short' shouldn't be in there. Stay tuned. To be continued...</p>
-      </div>       
+      </div>
 
 
 
@@ -169,29 +178,29 @@
 
 
 
-        
+
     </div><!-- /.entry-content -->
     </div><!-- /.entry-wrapper -->
     <nav class="pagination" role="navigation">
-    
+
     </nav><!-- /.pagination -->
   </article>
 </div><!-- /#main -->
 
 <div class="footer-wrapper">
   <footer role="contentinfo" class="entry-wrapper">
-    
+
 
 <span>&copy; 2016 Marc Sharma</span>
 <div class="social-icons">
   <a href="https://twitter.com/amgsharma" title="Marc Sharma on Twitter" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
-  
+
   <a href="https://linkedin.com/in/amgsharma" title="Marc Sharma on LinkedIn" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
-  
+
   <a href="https://github.com/amgsharma" title="Marc Sharma on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
-  
-  
-  
+
+
+
   <a href="http://msharma.io/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
 </div><!-- /.social-icons -->
 
@@ -215,7 +224,7 @@
 </script>
 
 
-<!-- htmlwidgets dependencies --> 
+<!-- htmlwidgets dependencies -->
 <script src="/htmlwidgets_deps/htmlwidgets-0.5/htmlwidgets.js"></script>
 <script src="/htmlwidgets_deps/d3-3.5.3/d3.min.js"></script>
 <link href="/htmlwidgets_deps/colorbrewer-1/colorbrewer.css" rel="stylesheet" />
