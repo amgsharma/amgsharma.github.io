@@ -68,15 +68,19 @@
   transition: 1s linear all;
   opacity: 0;
   }
-  
+
   .animate-enter.animate-enter-active {
   opacity: 1;
   }
-  
+
   .mapImage {
   width: 100%;
   }
-  
+
   .ranger {
   width: 500px;
   }
+
+.comments {
+  clear: both;
+}
